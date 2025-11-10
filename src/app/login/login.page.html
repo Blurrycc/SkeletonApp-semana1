@@ -1,13 +1,49 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>Login</ion-title>
+    <ion-title #tituloLogin>SkeletonApp</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Login</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  
+  <h2 style="text-align: center;">¡Bienvenido!</h2>
+  
+  <ion-input
+    label="Usuario"
+    label-placement="stacked"    
+    [(ngModel)]="user.usuario"
+    minlength="3"
+    maxlength="8"
+    counter="true"
+    placeholder="Ingresa tu usuario"
+    autocomplete="off"
+    required="true">
+  </ion-input>
+
+  <ion-input
+    class="ion-margin-top"
+    label="Password"
+    label-placement="stacked"    
+    [(ngModel)]="user.password"
+    type="password"
+    minlength="4"
+    maxlength="4"
+    placeholder="Ingresa clave numérica de 4 dígitos"
+    required="true">
+  </ion-input>
+
+  <ion-button 
+    class="ion-margin-top" 
+    expand="block" 
+    (click)="ingresar()">
+    Ingresar
+  </ion-button>
+
+  <ion-button
+    class="ion-margin-top"
+    expand="block"
+    fill="clear">
+    Crea tu cuenta gratis
+  </ion-button>
+
 </ion-content>

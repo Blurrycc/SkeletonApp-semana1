@@ -1,20 +1,63 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title #tituloAnimado>SkeletonAPP</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  
+  <h2>¡Bienvenido!</h2>
+  
+  <h3>Usuario: {{ usuarioRecibido }}</h3>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <h4>Información Adicional</h4>
+
+  <ion-input
+    #inputNombre
+    label="Nombre"
+    label-placement="stacked"
+    [(ngModel)]="nombre"
+    placeholder="Ingrese Nombre">
+  </ion-input>
+
+  <ion-input
+    #inputApellido
+    class="ion-margin-top"
+    label="Apellido"
+    label-placement="stacked"
+    [(ngModel)]="apellido"
+    placeholder="Ingrese Apellido">
+  </ion-input>
+
+  <ion-select
+    class="ion-margin-top"
+    label="Nivel Educación"
+    label-placement="stacked"
+    [(ngModel)]="nivelEducacion"
+    placeholder="Seleccione Nivel">
+    <ion-select-option value="basica">Básica</ion-select-option>
+    <ion-select-option value="media">Media</ion-select-option>
+    <ion-select-option value="superior">Superior</ion-select-option>
+  </ion-select>
+  
+  <mat-form-field appearance="fill" class="ion-margin-top">
+    <mat-label>Fecha Nacimiento</mat-label>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="fechaNacimiento">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  
+  <ion-grid class="ion-margin-top">
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="limpiar()" expand="block">Limpiar</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="mostrar()" expand="block">Mostrar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <p style="text-align: center;">App desarrollada por...</p>
+
 </ion-content>
