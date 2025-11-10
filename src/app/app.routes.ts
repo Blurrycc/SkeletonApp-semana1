@@ -14,4 +14,16 @@ export const routes: Routes = [
     path: 'login',
     loadComponent: () => import('./login/login.page').then( m => m.LoginPage)
   },
+  {
+    path: 'agregar-juego',
+    loadComponent: () => import('./agregar-juego/agregar-juego.page').then( m => m.AgregarJuegoPage)
+  },
+  {
+    path: 'mi-backlog',
+    loadComponent: () => import('./mi-backlog/mi-backlog.page').then( m => m.MiBacklogPage)
+  },
+  {
+    path: 'perfil',
+    loadComponent: () => import('./perfil/perfil.page').then( m => m.PerfilPage)
+  },
 ];

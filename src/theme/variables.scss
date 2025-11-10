@@ -1,2 +1,81 @@
-// For information on how to create your own theme, please see:
-// http://ionicframework.com/docs/theming/
+:root {
+
+  /* PALETA DE COLORES "QUESTLOG" */
+
+  /* Color Primario (Botones, links, etc.) */
+  --ion-color-primary: #17718F; 
+  --ion-color-primary-rgb: 23, 113, 143; /* Calculado de #17718F */
+  --ion-color-primary-contrast: #ffffff; 
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  
+  /* Color Secundario (Verde para acentos - tu #7DE279) */
+  --ion-color-secondary: #7DE279; 
+  --ion-color-secondary-rgb: 125, 226, 121; /* Calculado de #7DE279 */
+  --ion-color-secondary-contrast: #000000; /* Negro para contraste en este verde claro */
+  --ion-color-secondary-contrast-rgb: 0, 0, 0;
+
+  /* Color Terciario (Cian/Azul Claro - el #258B09 que se ve azul en la paleta, si no es typo) */
+  --ion-color-tertiary: #258B09; 
+  --ion-color-tertiary-rgb: 37, 139, 9; 
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+
+  /* Color de Fondo General (Tu gris claro #F2F2F2) */
+  --ion-background-color: #F2F2F2; 
+  --ion-background-color-rgb: 242, 242, 242;
+
+  /* Color de Texto Principal (Tu azul oscuro #17718F) */
+  --ion-text-color: #17718F;
+  --ion-text-color-rgb: 23, 113, 143;
+  
+  /* Colores de la Barra Superior (Header/Toolbar - Azul oscuro con título blanco para contraste) */
+  --ion-toolbar-background: #17718F;
+  --ion-toolbar-color: #ffffff; 
+
+  /* Color de la Tarjeta/Contenedor (Blanco puro para formularios, etc.) */
+  --ion-card-background: #ffffff;
+  --ion-card-color: #17718F; /* Texto dentro de la tarjeta */
+
+
+  /* COLORES ESTÁNDAR DE IONIC */
+  
+  --ion-color-secondary: #3dc2ff;
+  --ion-color-secondary-rgb: 61, 194, 255;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+
+  --ion-color-tertiary: #5260ff;
+  --ion-color-tertiary-rgb: 82, 96, 255;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+
+  --ion-color-success: #2dd36f;
+  --ion-color-success-rgb: 45, 211, 111;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 255, 255, 255;
+
+  --ion-color-warning: #ffc409;
+  --ion-color-warning-rgb: 255, 196, 9;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0, 0, 0;
+
+  --ion-color-danger: #eb445a;
+  --ion-color-danger-rgb: 235, 68, 90;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+
+  --ion-color-dark: #222428;
+  --ion-color-dark-rgb: 34, 36, 40;
+  --ion-color-dark-contrast: #ffffff;
+  --ion-color-dark-contrast-rgb: 255, 255, 255;
+
+  --ion-color-medium: #92949c;
+  --ion-color-medium-rgb: 146, 148, 156;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-contrast-rgb: 255, 255, 255;
+
+  --ion-color-light: #f4f5f8;
+  --ion-color-light-rgb: 244, 245, 248;
+  --ion-color-light-contrast: #000000;
+  --ion-color-light-contrast-rgb: 0, 0, 0;
+}

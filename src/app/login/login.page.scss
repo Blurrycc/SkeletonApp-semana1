@@ -1,0 +1,40 @@
+/* Estilo para el fondo de la página */
+.login-content {
+  --background: #F2F2F2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 5rem;
+}
+
+/* Estilo para el contenedor del logo/nombre */
+.logo-container {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  .app-logo {
+    width: 350px; /* Tamaño fijo, ajusta si es muy grande o pequeño */
+    display: block; /* Para que el margin auto funcione */
+    margin: 0 auto; /* Centra el logo horizontalmente */
+    height: auto;
+  }
+}
+
+/* Estilo para la tarjeta del formulario */
+.form-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  ion-input {
+    --color: #17718F;         /* Tu azul oscuro */
+    --placeholder-color: #5d8e9f; /* Un tono más claro del azul oscuro para placeholder */
+    --label-color: #17718F;     /* Tu azul oscuro */
+    --highlight-color: #258B09; /* Usamos tu verde para el highlight */
+
+    ion-label {
+      color: #17718F !important;
+    }
+  }
+}

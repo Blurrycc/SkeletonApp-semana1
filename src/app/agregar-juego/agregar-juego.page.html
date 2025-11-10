@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/home']">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Agregar Nuevo Juego</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-input
+    #inputNombre
+    label="Nombre del Juego"
+    label-placement="stacked"
+    [(ngModel)]="juego.nombre"
+    placeholder="Ej: Cyberpunk 2077">
+  </ion-input>
+
+  <ion-select
+    #inputPlataforma
+    class="ion-margin-top"
+    label="Plataforma"
+    label-placement="stacked"
+    [(ngModel)]="juego.plataforma"
+    placeholder="¿Dónde lo juegas?">
+    <ion-select-option value="pc">PC</ion-select-option>
+    <ion-select-option value="ps5">PlayStation 5</ion-select-option>
+    <ion-select-option value="xbox">Xbox Series X</ion-select-option>
+    <ion-select-option value="switch">Nintendo Switch</ion-select-option>
+  </ion-select>
+
+  <ion-select
+    class="ion-margin-top"
+    label="Estado"
+    label-placement="stacked"
+    [(ngModel)]="juego.estado"
+    placeholder="Estado actual">
+    <ion-select-option value="pendiente">Pendiente</ion-select-option>
+    <ion-select-option value="jugando">Jugando</ion-select-option>
+    <ion-select-option value="terminado">Terminado</ion-select-option>
+    <ion-select-option value="abandonado">Abandonado</ion-select-option>
+  </ion-select>
+
+  <mat-form-field appearance="fill" class="ion-margin-top">
+    <mat-label>Fecha de Compra</mat-label>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="juego.fechaCompra">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <ion-grid class="ion-margin-top">
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="limpiar()" expand="block" color="warning">Limpiar</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="guardar()" expand="block">Guardar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

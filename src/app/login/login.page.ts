@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-// 1. IMPORTACIONES NECESARIAS
-import { FormsModule } from '@angular/forms'; // Para [(ngModel)]
+// IMPORTACIONES NECESARIAS
+import { FormsModule } from '@angular/forms'; 
 import { IonicModule, AlertController } from '@ionic/angular'; // Para ion-input, ion-button, AlertController
-import { Router, NavigationExtras } from '@angular/router'; // Para navegar
+import { Router, NavigationExtras } from '@angular/router'; 
 
 @Component({
   selector: 'app-login',
@@ -11,8 +11,7 @@ import { Router, NavigationExtras } from '@angular/router'; // Para navegar
   styleUrls: ['./login.page.scss'],
   standalone: true,
   
-  // 2. AÑADIR IMPORTS PARA STANDALONE
-  // Aquí le decimos a esta página independiente qué módulos necesita
+  // AÑADIR IMPORTS PARA STANDALONE
   imports: [
     FormsModule,  // Permite usar [(ngModel)]
     IonicModule   // Permite usar <ion-input>, <ion-button>, etc.
@@ -25,7 +24,7 @@ export class LoginPage implements OnInit {
     password: ""
   }
 
-  // 3. INYECTAR DEPENDENCIAS EN EL CONSTRUCTOR
+  // INYECTAR DEPENDENCIAS EN EL CONSTRUCTOR
   constructor(
     private router: Router, 
     private alertController: AlertController
@@ -34,7 +33,7 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-  // 4. FUNCIÓN INGRESAR (DE LA PARTE 2)
+  // FUNCIÓN INGRESAR
   ingresar() {
     if (this.user.usuario.length < 3) {
       this.mostrarAlerta("Error", "El usuario debe tener entre 3 y 8 caracteres.");
@@ -54,7 +53,7 @@ export class LoginPage implements OnInit {
     this.router.navigate(['/home'], navigationExtras);
   }
 
-  // 5. FUNCIÓN DE ALERTA (DE LA PARTE 2)
+  // FUNCIÓN DE ALERTA
   async mostrarAlerta(titulo: string, mensaje: string) {
     const alert = await this.alertController.create({
       header: titulo,

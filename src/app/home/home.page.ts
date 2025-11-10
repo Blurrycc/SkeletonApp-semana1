@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 // Para componentes Ionic, Alertas y Animaciones
 import { IonicModule, AlertController, AnimationController } from '@ionic/angular'; 
 // Para recibir datos de la página de login
-import { ActivatedRoute, Router } from '@angular/router'; 
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -26,9 +26,11 @@ import { MatNativeDateModule } from '@angular/material/core';
     // Módulos de Angular Material
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    RouterLink
   ],
 })
+
 export class HomePage implements AfterViewInit { // AfterViewInit para la animación del título
 
   // Elementos HTML para animar
@@ -38,10 +40,6 @@ export class HomePage implements AfterViewInit { // AfterViewInit para la animac
 
   // Variables para la lógica
   usuarioRecibido: string = "";
-  nombre: string = "";
-  apellido: string = "";
-  nivelEducacion: string = "";
-  fechaNacimiento: string = "";
 
   constructor(
     private route: ActivatedRoute, 
@@ -71,42 +69,5 @@ export class HomePage implements AfterViewInit { // AfterViewInit para la animac
       .easing('ease-in-out');
     
     animacionTitulo.play();
-  }
-
-  // LIMPIAR
-  limpiar() {
-    // Llamamos a la animación para los inputs
-    this.animarInput(this.inputNombre.nativeElement);
-    this.animarInput(this.inputApellido.nativeElement);
-
-    // Limpiamos los datos del formulario
-    this.nombre = "";
-    this.apellido = "";
-    this.nivelEducacion = "";
-    this.fechaNacimiento = "";
-  }
-
-  // Función reutilizable para ANIMAR INPUTS
-  animarInput(elemento: any) {
-    this.animationCtrl.create()
-      .addElement(elemento)
-      .duration(1000) // 1 segundo 
-      .iterations(1) // 1 iteración 
-      .fromTo('transform', 'translateX(0px)', 'translateX(20px)') // Mov. izquierda a derecha 
-      .fromTo('opacity', '1', '0.2')
-      .direction('alternate') 
-      .easing('ease-in-out')
-      .play();
-  }
-
-  // --- (Paso 3) Función MOSTRAR ---
-  async mostrar() {
-    const alert = await this.alertController.create({
-      header: 'Usuario',
-      // Mostramos nombre y apellido como pide el mockup 
-      message: 'Su nombre es ' + this.nombre + ' ' + this.apellido,
-      buttons: ['Yes'] 
-    });
-    await alert.present();
   }
 }
